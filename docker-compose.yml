@@ -1,0 +1,25 @@
+version: '3.9'
+
+services:
+  app:
+    container_name: mfus-app
+    image: victor141516/mfus
+    build: .
+    restart: unless-stopped
+    ports:
+      - "3000:3000"
+    environment:
+      - DATABASE_URI=postgres://postgres:postgress@mfus-postgres:5432/mfus
+  
+  postgres:
+    container_name: mfus-postgres
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_DB=mfus
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./db:/var/lib/postgresql/data
