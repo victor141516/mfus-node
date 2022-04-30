@@ -1,0 +1,21 @@
+@property --myColor1 {
+  syntax: '<color>';
+  initial-value: theme('colors.primary.400');
+  inherits: false;
+}
+
+@property --myColor2 {
+  syntax: '<color>';
+  initial-value: theme('colors.secondary.400');
+  inherits: false;
+}
+
+.submitButton {
+  background: linear-gradient(var(--myColor1), var(--myColor2)) !important;
+  transition: --myColor1 0.25s, --myColor2 0.25s !important;
+}
+
+.submitButton:hover {  
+  --myColor1: theme('colors.secondary.500');
+  --myColor2: theme('colors.primary.500');
+}

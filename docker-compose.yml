@@ -3,14 +3,19 @@ version: '3.9'
 services:
   app:
     container_name: mfus-app
-    image: victor141516/mfus
+    image: victor141516/mfus-node
     build: .
     restart: unless-stopped
     ports:
       - "3000:3000"
     environment:
-      - DATABASE_URI=postgres://postgres:postgress@mfus-postgres:5432/mfus
-  
+      - DATABASE_USER=postgres
+      - DATABASE_PASSWORD=postgres
+      - DATABASE_HOST=postgres
+      - DATABASE_PORT=5432
+      - DATABASE_DBNAME=mfus
+      - LEGACY_API_SUPPORT=true
+
   postgres:
     container_name: mfus-postgres
     image: postgres
