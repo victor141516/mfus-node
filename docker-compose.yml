@@ -13,6 +13,8 @@ services:
       - DATABASE_PORT=5432
       - DATABASE_DBNAME=mfus
       - LEGACY_API_SUPPORT=true
+    depends_on:
+      - postgres
 
   postgres:
     container_name: mfus-postgres
