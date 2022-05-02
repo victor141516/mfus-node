@@ -62,11 +62,11 @@ export default function App() {
   }
 
   return (
-    <div className="flex flex-col items-center pt-4 h-screen dark:bg-slate-800">
-      <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+    <div className="flex flex-col items-center px-4 pt-4 h-screen dark:bg-slate-800">
+      <h1 className="text-6xl sm:text-7xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
         mfus.tk
       </h1>
-      <form className="mt-8 flex flex-col px-1" onSubmit={submitHandler}>
+      <form className="mt-8 flex flex-col" onSubmit={submitHandler}>
         <div className="my-4">{UrlInput}</div>
         <div className="my-4">{CodeInput}</div>
         <div className="mt-4 flex flex-col items-center">

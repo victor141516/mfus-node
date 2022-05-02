@@ -25,7 +25,7 @@ export default function Input({
       <div className="mt-2 relative rounded-md shadow-sm">
         {prefix ? (
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <span className="text-gray-500 dark:text-slate-300 text-3xl">
+            <span className="text-gray-500 dark:text-slate-300 text-xl md:text-3xl">
               <>{prefix}</>
             </span>
           </div>
@@ -35,8 +35,8 @@ export default function Input({
           key={name}
           type="text"
           className={`${
-            prefix ? 'pl-29' : ''
-          } focus:ring-primary-500 focus:border-primary-500 block h-18 w-full text-3xl border-gray-300 dark:bg-slate-500 dark:border-slate-700 dark:text-gray-100 rounded-md`}
+            prefix ? 'pl-21 md:pl-29' : ''
+          } focus:ring-primary-500 focus:border-primary-500 block h-12 md:h-18 w-full text-xl md:text-3xl border-gray-300 dark:bg-slate-500 dark:border-slate-700 dark:text-gray-100 rounded-md`}
           name={name}
           value={value}
           autoFocus={autofocus}

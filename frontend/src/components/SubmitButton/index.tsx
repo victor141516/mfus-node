@@ -7,9 +7,12 @@ export default function SubmitButton({ children }: { children: React.ReactNode }
         ${styles.submitButton}
         inline-flex
         items-center
-        px-12
-        py-6
-        text-4xl
+        md:px-12
+        md:py-6
+        px-8
+        py-3
+        text-2xl
+        md:text-4xl
         font-light
         rounded-full
         shadow-sm
