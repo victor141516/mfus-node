@@ -7,12 +7,10 @@ networks:
 
 services:
   app:
-    ports: []
     networks:
       - default
       - caddywork
 
   postgres:
-    ports: []
     networks:
       - default
