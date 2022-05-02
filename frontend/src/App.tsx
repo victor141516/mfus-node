@@ -63,12 +63,12 @@ export default function App() {
 
   return (
     <div className="flex flex-col items-center pt-4 h-screen dark:bg-slate-800">
-      <h1 className="text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
+      <h1 className="text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
         mfus.tk
       </h1>
-      <form className="mt-8 flex flex-col px-1 2xl:w-1/6" onSubmit={submitHandler}>
-        <div className="my-2">{UrlInput}</div>
-        <div className="my-2">{CodeInput}</div>
+      <form className="mt-8 flex flex-col px-1" onSubmit={submitHandler}>
+        <div className="my-4">{UrlInput}</div>
+        <div className="my-4">{CodeInput}</div>
         <div className="mt-4 flex flex-col items-center">
           <div className="z-10">
             <SubmitButton>Short!</SubmitButton>

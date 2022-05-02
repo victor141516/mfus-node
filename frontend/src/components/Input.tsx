@@ -19,13 +19,13 @@ export default function Input({
   if (propValue && propValue !== value) setValue(propValue)
   return (
     <div>
-      <label htmlFor={name} className="block text-sm font-medium text-gray-700 dark:text-gray-100">
+      <label htmlFor={name} className="block text-lg font-medium text-gray-700 dark:text-gray-100">
         <>{label}</>
       </label>
-      <div className="mt-1 relative rounded-md shadow-sm">
+      <div className="mt-2 relative rounded-md shadow-sm">
         {prefix ? (
           <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-            <span className="text-gray-500 dark:text-slate-300 sm:text-sm">
+            <span className="text-gray-500 dark:text-slate-300 text-3xl">
               <>{prefix}</>
             </span>
           </div>
@@ -35,8 +35,8 @@ export default function Input({
           key={name}
           type="text"
           className={`${
-            prefix ? 'pl-18 sm:pl-16' : ''
-          } focus:ring-primary-500 focus:border-primary-500 block w-full sm:text-sm border-gray-300 dark:bg-slate-500 dark:border-slate-700 dark:text-gray-100 rounded-md`}
+            prefix ? 'pl-29' : ''
+          } focus:ring-primary-500 focus:border-primary-500 block h-18 w-full text-3xl border-gray-300 dark:bg-slate-500 dark:border-slate-700 dark:text-gray-100 rounded-md`}
           name={name}
           value={value}
           autoFocus={autofocus}

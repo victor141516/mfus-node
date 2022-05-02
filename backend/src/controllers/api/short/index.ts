@@ -3,7 +3,7 @@ import { Router, Request, Response } from 'express'
 import { Client, DatabaseError } from 'pg'
 import { getFreshShortCode } from '../../../services/last-short-link'
 import { decode } from '../../../services/coder'
-import { db, LongCodeLink, ShortCodeLink, stringifyError } from '../../../services/database'
+import { db, LongCodeLink, stringifyError } from '../../../services/database'
 import { saveLink } from '../../../services/links'
 
 export const handleSaveLinkAction = async (db: Client, { url, code }: { url: string; code: string }) => {
