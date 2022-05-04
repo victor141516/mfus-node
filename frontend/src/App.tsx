@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useCopiedNotification } from './components/CopiedNotifcation'
 import Input from './components/Input'
 import SubmitButton from './components/SubmitButton'
@@ -26,9 +26,9 @@ export default function App() {
     })
   }
 
-  if (!guess) {
+  useEffect(() => {
     fetchGuess()
-  }
+  }, [])
 
   const [longUrl, setLongUrl] = useState('')
   const [CopiedNotification, onShowCopiedNotification] = useCopiedNotification()
