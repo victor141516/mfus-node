@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export default function Input({
+export function Input({
   name,
   label,
   prefix,
