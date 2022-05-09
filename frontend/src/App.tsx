@@ -5,15 +5,7 @@ import { Input } from './components/Input'
 import { SubmitButton } from './components/SubmitButton'
 import { AlertManager } from './services/alerts'
 import { getGuess, postShorten } from './services/backend'
-import { BACKEND_BASE_URL, URL_ORIGIN } from './services/config'
-
-// Redirect to the shorted URL in development
-;(() => {
-  const pathName = window.location.pathname
-  if (pathName !== '/') {
-    window.location.href = `${BACKEND_BASE_URL}${pathName}`
-  }
-})()
+import { URL_ORIGIN } from './services/config'
 
 const alertManager = new AlertManager()
 
