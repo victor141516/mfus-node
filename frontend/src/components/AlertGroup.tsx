@@ -19,13 +19,10 @@ export function AlertGroup({ alertManager }: { alertManager: AlertManager }) {
   const [alerts, setAlerts] = useState<Array<{ message: string; timeout: number }>>([])
 
   useEffect(() => {
-    const ts = alerts.map(
-      ({ message, timeout }) => {
-        const t = Math.max(timeout - Date.now(), 0)
-        return setTimeout(() => removeAlert(message), t)
-      },
-      [alerts],
-    )
+    const ts = alerts.map(({ message, timeout }) => {
+      const t = Math.max(timeout - Date.now(), 0)
+      return setTimeout(() => removeAlert(message), t)
+    })
 
     return () => ts.forEach((t) => clearTimeout(t))
   }, [alerts])

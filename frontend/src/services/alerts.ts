@@ -1,19 +1,21 @@
 export class AlertManager {
-  private alerts: string[]
+  private alerts: Set<string>
   private cb: (msg: string) => void
 
   constructor() {
-    this.alerts = []
+    this.alerts = new Set()
     this.cb = (_: string) => {}
   }
 
   add(alert: string) {
-    this.alerts.push(alert)
-    this.cb(alert)
+    if (!this.alerts.has(alert)) {
+      this.alerts.add(alert)
+      this.cb(alert)
+    }
   }
 
   remove(alert: string) {
-    this.alerts = this.alerts.filter((a) => a !== alert)
+    this.alerts.delete(alert)
   }
 
   onAlert(cb: (msg: string) => void) {
