@@ -1,9 +1,14 @@
-FROM node:lts-alpine as backend-builder
+FROM node:lts-alpine as backend-installer
 WORKDIR /app
 COPY backend/package.json backend/package-lock.json /app/
 RUN npm i
 COPY backend /app
+
+FROM backend-installer as backend-builder
 RUN npm run build
+
+FROM backend-installer as backend-dev
+ENTRYPOINT [ "npm", "start" ]
 
 FROM node:lts-alpine as backend-runner
 WORKDIR /app
