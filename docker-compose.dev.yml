@@ -11,6 +11,18 @@ services:
     ports:
       - "3000:3000"
 
+  frontend-dev:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: frontend-dev
+    environment:
+      - PROXY_TARGET=http://app:3000
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3001:3001"
+
   postgres:
     ports:
       - "5432:5432"
