@@ -12,6 +12,7 @@ services:
       - "3000:3000"
 
   frontend-dev:
+    container_name: frontend-dev
     build:
       context: .
       dockerfile: Dockerfile
