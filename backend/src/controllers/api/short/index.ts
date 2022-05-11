@@ -6,7 +6,7 @@ import { decode } from '../../../services/coder'
 import { db, LongCodeLink, stringifyError } from '../../../services/database'
 import { saveLink } from '../../../services/links'
 
-export const handleSaveLinkAction = async (db: Client, { url, code }: { url: string; code: string }) => {
+export const handleSaveLinkAction = async (db: Client, { url, code }: { url: string; code?: string }) => {
   return (await saveLink(await db, { url, code })
     .then((result) => {
       const code = (result as LongCodeLink)!.code ?? decode(result.id)
@@ -31,7 +31,7 @@ const post = async (req: Request, res: Response) => {
   console.log({ body })
 
   if (!body.url) {
-    return res.status(400).send({ ok: false, error: 'Missing URL' })
+    return res.status(400).send({ ok: false, error: 'MISSING_URL' })
   }
 
   const result = await handleSaveLinkAction(await db, body)
