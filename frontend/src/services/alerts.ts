@@ -1,3 +1,14 @@
+export enum ERROR_CODES {
+  DUPLICATE_KEY = 'DUPLICATE_KEY',
+  MISSING_URL = 'MISSING_URL',
+}
+
+export const getAlertText = (errorCode: string) =>
+  ({
+    DUPLICATE_KEY: 'That URL is already used',
+    MISSING_URL: 'You must enter a URL to short',
+  }[errorCode] ?? 'Unknown error')
+
 export class AlertManager {
   private alerts: Set<string>
   private cb: (msg: string) => void

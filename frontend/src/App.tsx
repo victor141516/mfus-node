@@ -3,7 +3,7 @@ import { AlertGroup } from './components/AlertGroup'
 import { useCopiedNotification } from './components/CopiedNotifcation'
 import { Input } from './components/Input'
 import { SubmitButton } from './components/SubmitButton'
-import { AlertManager } from './services/alerts'
+import { AlertManager, ERROR_CODES, getAlertText } from './services/alerts'
 import { getGuess, postShorten } from './services/backend'
 import { URL_ORIGIN } from './services/config'
 
@@ -32,7 +32,7 @@ export default function App() {
   const submitHandler = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     if (longUrl === '') {
-      return alertManager.add('Please enter a URL')
+      return alertManager.add(getAlertText(ERROR_CODES.MISSING_URL))
     }
     const payload: { url: string; code?: string } = { url: longUrl }
     if (code !== guess) payload.code = code
@@ -42,7 +42,7 @@ export default function App() {
       await navigator.clipboard.writeText(`${URL_ORIGIN}/${result.code}`)
       onShowCopiedNotification()
     } else {
-      alertManager.add({ DUPLICATE_KEY: 'That URL is already used' }[result.error!]!)
+      alertManager.add(getAlertText(result.error!))
     }
   }
 
