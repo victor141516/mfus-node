@@ -12,7 +12,7 @@ ENTRYPOINT [ "npm", "start" ]
 
 FROM node:lts-alpine as backend-runner
 WORKDIR /app
-COPY --from=backend-builder /app/dist /app/package.json /app/package-lock.json /app/
+COPY --from=backend-builder /app/dist/src/ /app/package.json /app/package-lock.json /app/
 RUN npm install --only=production
 ENTRYPOINT ["node", "main.js"]
 
