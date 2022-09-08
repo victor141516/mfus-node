@@ -1,6 +1,6 @@
-#!/bin/sh
+#!/bin/bash
 
-dc_environment=${1:-production}
+dc_environment=${1:-prod}
 dc_base_cmd="docker-compose -f docker-compose.yml -f docker-compose.$dc_environment.yml"
 all_params_but_first="${@:2}"
 dc_action="${all_params_but_first:-up -d}"
