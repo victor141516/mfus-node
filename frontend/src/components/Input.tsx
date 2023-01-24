@@ -35,7 +35,7 @@ export function Input({
           key={name}
           type="text"
           className={`${
-            prefix ? 'pl-21 md:pl-29' : ''
+            prefix ? 'pl-22 md:pl-30' : ''
           } focus:ring-primary-500 focus:border-primary-500 block h-12 md:h-18 w-full text-xl md:text-3xl border-gray-300 dark:bg-slate-500 dark:border-slate-700 dark:text-gray-100 rounded-md`}
           name={name}
           value={value}

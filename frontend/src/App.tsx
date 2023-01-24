@@ -53,7 +53,7 @@ export default function App() {
       </div>
       <div className="flex flex-col items-center px-4 pt-4 h-screen dark:bg-slate-800">
         <h1 className="text-6xl sm:text-7xl md:text-9xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-primary-400 to-secondary-400">
-          mfus.tk
+          {URL_ORIGIN}
         </h1>
         <form className="mt-8 flex flex-col" onSubmit={submitHandler}>
           <div className="my-4">
@@ -64,7 +64,7 @@ export default function App() {
               name="code"
               value={code}
               label="Short URL"
-              prefix="mfus.tk/"
+              prefix={`${URL_ORIGIN}/`}
               onChange={(val) => setCode(val)}
             ></Input>
           </div>

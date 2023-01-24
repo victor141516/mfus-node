@@ -1,4 +1,4 @@
-# mfus.tk - Link shortener
+# mfus.lol - Link shortener
 
 This is a simple link shortener using an optimized-for-shortness-and-legibility short URL generation algorithm.
 
